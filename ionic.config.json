@@ -1,0 +1,7 @@
+{
+  "name": "CrudLocalStorage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

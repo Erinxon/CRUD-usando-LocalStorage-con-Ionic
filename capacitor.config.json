@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter.crud",
+	"appName": "CrudLocalStorage",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

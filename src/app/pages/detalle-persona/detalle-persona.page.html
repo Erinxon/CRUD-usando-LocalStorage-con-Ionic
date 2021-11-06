@@ -1,0 +1,19 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/personas"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="persona">{{persona.nombre}} {{persona.apellido}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="persona">
+    <app-card [title]="'Nombre'" [content]="persona.nombre"></app-card>
+    <app-card [title]="'Apellido'" [content]="persona.nombre"></app-card>
+    <app-card [title]="'Edad'" [content]="persona.edad"></app-card>
+    <app-card [title]="'Dirección'" [content]="persona.direccion"></app-card>
+    <app-card [title]="'Telefono'" [content]="persona.telefono"></app-card>
+    <app-card [title]="'Email'" [content]="persona.email"></app-card>
+  </div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Personas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="!loanding && personas">
+    <div *ngFor="let persona of personas">
+      <ion-item>
+        <ion-avatar class="avatar" slot="start">
+          <ion-label>{{getIniciales(persona.nombre, persona.apellido)}}</ion-label>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{persona.nombre}} {{persona.apellido}}</h2>
+          <h3>{{persona.direccion}}</h3>
+        </ion-label>
+        <ion-item slot="end">
+          <ion-icon class="icon" name="eye-outline" [routerLink]="['/detalle-persona', persona.id]"></ion-icon>
+          <ion-icon class="icon" name="create-outline" [routerLink]="['/editar-persona', persona.id]"></ion-icon>
+          <ion-icon class="icon" name="trash-outline" (click)="eliminarPersona(persona.id)"></ion-icon>
+        </ion-item> 
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-label *ngIf="!loanding && personas.length === 0">
+    <h2 style="text-align: center;">No hay personas</h2>
+  </ion-label>
+  <app-loanding *ngIf="loanding"></app-loanding>
+</ion-content>
